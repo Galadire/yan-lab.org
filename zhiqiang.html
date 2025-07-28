@@ -1,0 +1,707 @@
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Zhiqiang Yan</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="22bce935-d3bb-8167-a36a-eccad50385c0" class="page sans"><header><img class="page-cover-image" src="Zhiqiang%20Yan%2022bce935d3bb8167a36aeccad50385c0/Asset_1.png" style="object-position:center 10.519999999999996%"/><h1 class="page-title">Zhiqiang Yan</h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><div id="22bce935-d3bb-81aa-99c0-c2287cf7d109" class="column-list"><div id="22bce935-d3bb-8172-b12e-cbc1cfd52dcf" style="width:25%" class="column"><div><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="22cce935-d3bb-805b-a3ce-d1e89f861c07"><div style="width:100%"><div id="22cce935-d3bb-8180-a80b-c3b82f622756" class="collection-content"><h4 class="collection-title">Categories</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><div data-testid="/icons/font_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/font_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/font_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>Name</th></tr></thead><tbody><tr id="22cce935-d3bb-81c5-9620-f39eb7d6ae23"><td class="cell-title"><a href="Zhiqiang%20Yan%2022bce935d3bb8167a36aeccad50385c0/Categories%2022cce935d3bb8180a80bc3b82f622756/Zhiqiang%20Yan%2022cce935d3bb81c59620f39eb7d6ae23.html">Zhiqiang Yan</a></td></tr><tr id="22cce935-d3bb-8186-ae21-efe1a1d14b78"><td class="cell-title"><a href="Zhiqiang%20Yan%2022bce935d3bb8167a36aeccad50385c0/Categories%2022cce935d3bb8180a80bc3b82f622756/Research%2022cce935d3bb8186ae21efe1a1d14b78.html">Research</a></td></tr><tr id="22cce935-d3bb-8116-84ab-e13121799073"><td class="cell-title"><a href="Zhiqiang%20Yan%2022bce935d3bb8167a36aeccad50385c0/Categories%2022cce935d3bb8180a80bc3b82f622756/Publications%2022cce935d3bb811684abe13121799073.html">Publications</a></td></tr><tr id="22cce935-d3bb-8172-a1a5-c667461c7bdd"><td class="cell-title"><a href="Zhiqiang%20Yan%2022bce935d3bb8167a36aeccad50385c0/Categories%2022cce935d3bb8180a80bc3b82f622756/Members%2022cce935d3bb8172a1a5c667461c7bdd.html">Members</a></td></tr><tr id="22cce935-d3bb-8121-a0d5-d5a515f3e4ec"><td class="cell-title"><a href="Zhiqiang%20Yan%2022bce935d3bb8167a36aeccad50385c0/Categories%2022cce935d3bb8180a80bc3b82f622756/Gallery%2022cce935d3bb8121a0d5d5a515f3e4ec.html">Gallery</a></td></tr><tr id="22cce935-d3bb-81b4-bca1-d36ac938e4a3"><td class="cell-title"><a href="Zhiqiang%20Yan%2022bce935d3bb8167a36aeccad50385c0/Categories%2022cce935d3bb8180a80bc3b82f622756/Join%20us%2022cce935d3bb81b4bca1d36ac938e4a3.html">Join us</a></td></tr><tr id="22cce935-d3bb-8151-a014-ed9b6147d02a"><td class="cell-title"><a href="Zhiqiang%20Yan%2022bce935d3bb8167a36aeccad50385c0/Categories%2022cce935d3bb8180a80bc3b82f622756/Contact%20us%2022cce935d3bb8151a014ed9b6147d02a.html">Contact us</a></td></tr></tbody></table><br/><br/></div><p id="22cce935-d3bb-8007-a397-f6f28b86d1b6" class="">
+</p><hr id="22cce935-d3bb-81ad-a852-d33294dfba2f"/><figure id="22cce935-d3bb-81f8-9828-c9d2ac61e766" class="link-to-page"><a href="Zhiqiang%20Yan%2022bce935d3bb8167a36aeccad50385c0/All%20Members%2022cce935d3bb81f89828c9d2ac61e766.html"><img class="icon" src="https://www.notion.so/icons/meeting_blue.svg"/>All Members</a></figure><hr id="22cce935-d3bb-8186-b4cb-e61d80c69eeb"/></div></figure></div><p id="22cce935-d3bb-803f-89b1-fd0bb637e369" class="">
+</p></div><div id="22bce935-d3bb-81c9-9d07-f60b9b2dffb0" style="width:75%" class="column"><div id="22cce935-d3bb-8028-a502-ea8ba7f7fb30" class="column-list"><div id="22cce935-d3bb-8010-ba75-c6d280ca26f9" style="width:3.225806451612903%" class="column"><p id="22cce935-d3bb-8009-8d53-fe0b3723afad" class="">
+</p></div><div id="22cce935-d3bb-807d-838f-c6751f872eb7" style="width:95.83333333333333%" class="column"><figure id="22cce935-d3bb-805e-84b1-dcfaf25716bd" class="image"><a href="Zhiqiang%20Yan%2022bce935d3bb8167a36aeccad50385c0/bc42b4db-1c59-4b6b-8927-7509ab55574a.png"><img style="width:336px" src="Zhiqiang%20Yan%2022bce935d3bb8167a36aeccad50385c0/bc42b4db-1c59-4b6b-8927-7509ab55574a.png"/></a></figure></div><div id="22cce935-d3bb-802e-a156-db5649937f59" style="width:88.03763440860217%" class="column"><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="22cce935-d3bb-8063-bedd-e4a58b523f8d"><div style="width:100%"><h1 id="22cce935-d3bb-80f4-b8d5-f723041d1408" class=""><strong>Zhiqiang Yan</strong></h1><p id="22cce935-d3bb-80e8-8511-ee9e1c088a09" class=""><mark class="highlight-brown">Professor and Dean</mark></p><p id="22cce935-d3bb-80b4-9ade-de3144d1d57e" class="">School of Basic Medical Sciences, Capital Medical University, China</p><p id="22cce935-d3bb-808c-81a6-f25776e9e642" class=""><mark class="highlight-brown">Investigator and Director</mark></p><p id="22cce935-d3bb-8050-9904-ea1f71a098db" class="">Institute for Medical Physiology, Chinese Institutes for Medical Research, Beijing, China</p><p id="22cce935-d3bb-80b5-aab4-fd90b3ca9926" class=""><strong>Email:</strong></p><p id="22cce935-d3bb-8001-a93b-d24b4819cfea" class=""><a href="mailto:zqyan@ccmu.edu.cn">zqyan@ccmu.edu.cn</a>; <a href="mailto:zqyan@cimrbj.ac.cn">zqyan@cimrbj.ac.cn</a></p><p id="22cce935-d3bb-80a0-8973-ce021fc0a9ba" class=""><a href="mailto:zqyan@cimrbj.ac.cn">zqyan@szbl.ac.cn</a></p></div></figure></div></div><h1 id="22cce935-d3bb-80d8-bdae-e39305131caf" class="">Introduction</h1><hr id="22bce935-d3bb-8128-81c6-faa6f037d039"/><p id="22bce935-d3bb-81c9-a0a8-c1dc3dfcd611" class="">Dr. Zhiqiang Yan obtained his bachelor&#x27;s degree from Fudan University in 2004. He then pursued his Ph.D. degree in Neurobiology at the Institute of Neuroscience, Chinese Academy of Sciences, National Institute of Biological Sciences, Beijing, and the Institute of Biophysics, Chinese Academy of Sciences, from 2004 to 2009. He received postdoctoral training in the Lily Jan and Yuh Nung Jan group at the Howard Hughes Medical Institute &amp;University of California at San Francisco, San Francisco, USA. In 2013, he was appointed as a professor at Fudan University. Then, he joined the Institute of Molecular Physiology of Shenzhen Bay Laboratory as a senior principal investigator in 2020 and was appointed as deputy director. In 2024, he assumed the roles of professor and dean at the School of Basic Medical Sciences, Capital Medical University. Also, he became an investigator and director at the Institute for Medical Physiology, Chinese Institutes for Medical Research, Beijing. Dr. Yan has published papers as the first or corresponding author in journals including <em>Nature</em>, <em>Neuron</em>,<em> Nature Structural &amp; Molecular Biology</em>,<em> PNAS</em>,<em> Nature Communications</em>,<em> eLife</em>,<em> Cell Reports</em>, etc. He was funded by 4 National Key Research and Development Projects of China and 2 programs of the National Natural Science Foundation of China.</p><h1 id="22bce935-d3bb-81e6-9748-dacf17d96bed" class="">Biography</h1><hr id="22bce935-d3bb-8158-ac7a-da6cd8c64ec6"/><h3 id="22bce935-d3bb-810b-88f2-f9d218253733" class=""><strong>WORK   EXPERIENCE</strong>                                    </h3><div id="22bce935-d3bb-81c0-be5b-ea35f2a8b854" class="column-list"><div id="22bce935-d3bb-8193-ac36-c3840fc1ffab" style="width:50%" class="column"><p id="22bce935-d3bb-81bd-a7be-f1821c7846c1" class="">2024 - Present</p><p id="22bce935-d3bb-813f-8abc-f57ce51e15ad" class="">
+</p><p id="22bce935-d3bb-8176-ab58-c540d710584e" class="">2024 - Present </p><p id="22bce935-d3bb-81d4-aa51-cded4b5538aa" class="">
+</p><p id="22bce935-d3bb-8153-b9ed-d303b9acc96f" class="">2020 - 2024</p><p id="22bce935-d3bb-81aa-924b-fb120fb8a573" class="">
+</p><p id="22bce935-d3bb-8136-97ee-cec6670ccdad" class="">2013 - 2020</p><p id="22bce935-d3bb-814f-8ea3-c569d1076ffb" class="">
+</p><p id="22bce935-d3bb-8168-a8db-d58e020a91cd" class="">2009 - 2013          </p></div><div id="22bce935-d3bb-8150-9c54-e5956d9546ff" style="width:112.5%" class="column"><p id="22bce935-d3bb-8153-9497-cb4581ece01e" class="">Institute for Medical Physiology, Chinese Institutes for Medical Research, Beijing</p><p id="22bce935-d3bb-8138-bd2c-f3b033ca5fe1" class="">School of Basic Medical Sciences, Capital Medical University   </p><p id="22bce935-d3bb-81c4-88b1-c5937f0eea41" class="">Institute of Molecular Physiology, Shenzhen Bay Laboratory </p><p id="22bce935-d3bb-816c-a5cb-e6ec6ff98035" class="">
+</p><p id="22bce935-d3bb-815b-86d6-d944f102caaf" class="">Fudan University</p><p id="22bce935-d3bb-81e4-b92f-d7912356fcc8" class="">
+</p><p id="22bce935-d3bb-8145-ab45-c393f705b012" class="">HHMI &amp; UCSF            </p></div><div id="22bce935-d3bb-81f0-a476-e5b1be2503ab" style="width:87.5%" class="column"><p id="22bce935-d3bb-81a0-bb88-df7aef13f99d" class="">Investigator and Director</p><p id="22bce935-d3bb-815e-b25e-f281c21e1957" class="">
+</p><p id="22bce935-d3bb-81aa-8b66-eb41f5a1cc89" class="">Professor and Dean</p><p id="22bce935-d3bb-8126-9726-dfb0a172aa29" class="">
+</p><p id="22bce935-d3bb-810b-b82f-ee32f3523cc4" class="">Senior Investigator and Deputy Director</p><p id="22bce935-d3bb-8122-9c26-f0081ba4c2d8" class="">
+</p><p id="22bce935-d3bb-8124-8a99-ea25413b8ef8" class="">Professor</p><p id="22bce935-d3bb-81cb-b482-cac62990df0c" class="">
+</p><p id="22bce935-d3bb-81fd-8c96-f155585f66c0" class="">Postdoctoral Researcher</p></div></div><h3 id="22bce935-d3bb-8148-bac5-e3566aa2d366" class=""><strong>EDUCATIONAL BACKGROUND</strong></h3><div id="22bce935-d3bb-8170-af51-c9665277a590" class="column-list"><div id="22bce935-d3bb-8125-9e10-c90fdafd2c78" style="width:54.166666666666664%" class="column"><p id="22bce935-d3bb-8197-b042-c621d381f40b" class="">2004 - 2009</p><p id="22bce935-d3bb-81d8-bca3-fde16b950f37" class="">
+</p></div><div id="22bce935-d3bb-8190-b79f-d72663c73630" style="width:91.66666666666666%" class="column"><p id="22bce935-d3bb-811c-9c0c-d2324f8fdf49" class="">Institute of Neuroscience, Chinese Academy of Sciences, National                                         Institute of Biological Sciences, Beijing &amp; Institute of Biophysics, Chinese Academy of Sciences</p></div><div id="22bce935-d3bb-8157-a8fc-f19609eb3112" style="width:100%" class="column"><p id="22bce935-d3bb-819e-9f95-df58bee36b11" class="">Ph.D.</p><p id="22bce935-d3bb-8133-b54c-c477f0b7cffb" class="">
+</p></div></div><div id="22bce935-d3bb-810c-9c7a-e641e7af17e0" class="column-list"><div id="22bce935-d3bb-8121-a294-d537381a4ea4" style="width:50%" class="column"><p id="22bce935-d3bb-81f4-98df-e413d03b28e2" class="">2000 - 2004</p></div><div id="22bce935-d3bb-8170-9377-fb189525a7f6" style="width:95.83333333333333%" class="column"><p id="22bce935-d3bb-8128-bf54-dc916ebcb65a" class="">Fudan University</p></div><div id="22bce935-d3bb-8195-a38e-df4cfe504465" style="width:100%" class="column"><p id="22bce935-d3bb-8152-ad64-cbf680861337" class="">B.S.</p></div></div><h3 id="22bce935-d3bb-814b-b1e9-e5fee8b1d34a" class=""><strong>AWARDS</strong></h3><div id="22bce935-d3bb-81ec-9800-c21a8cd877b3" class="column-list"><div id="22bce935-d3bb-81c3-b28c-c4e588291116" style="width:29.166666666666664%" class="column"><p id="22bce935-d3bb-81e7-8f4c-dbd89f6c3166" class="">2010 - 2013  </p></div><div id="22bce935-d3bb-81ce-8ab1-d6ec0f947eca" style="width:108.33333333333334%" class="column"><p id="22bce935-d3bb-8115-ad1d-f92e7544b493" class="">Human Frontier Science Program (HFSP) Long-term Fellowship</p></div><div id="22bce935-d3bb-8142-a534-f49392a966ea" style="width:4.166666666666666%" class="column"><p id="22bce935-d3bb-81dc-be33-c96749439d76" class="">
+</p></div></div><div id="22bce935-d3bb-81e9-b48e-e6ab45dd911d" class="column-list"><div id="22bce935-d3bb-815d-80ca-cc2a73688062" style="width:29.166666666666664%" class="column"><p id="22bce935-d3bb-81fa-961a-e6e049d55b32" class="">2014</p></div><div id="22bce935-d3bb-81a1-96f7-f1fc2757871c" style="width:99.99999999999999%" class="column"><p id="22bce935-d3bb-817a-ae8a-c55773a6c947" class="">The Program for Professor of Special Appointment (Eastern Scholar of Shanghai)</p></div><div id="22bce935-d3bb-81c9-be88-ff9ff307ed95" style="width:4.166666666666666%" class="column"><p id="22bce935-d3bb-81b2-92f9-d844b0be4756" class="">
+</p></div></div><div id="22bce935-d3bb-8196-96a5-f4e78c1ef712" class="column-list"><div id="22bce935-d3bb-8193-bcfd-e3b3c0853b05" style="width:29.166666666666664%" class="column"><p id="22bce935-d3bb-81ed-a201-d4b15fc44c79" class="">2014</p></div><div id="22bce935-d3bb-81ba-bacb-d34bfbc18156" style="width:95.83333333333334%" class="column"><p id="22bce935-d3bb-81a9-8850-c2dbac5ed941" class="">The Shanghai Rising-Star Program</p></div><div id="22bce935-d3bb-8140-952c-cecbf7a4977b" style="width:4.166666666666666%" class="column"><p id="22bce935-d3bb-8147-a14c-f6c6e6ed7143" class="">
+</p></div></div></div></div><div><p id="22bce935-d3bb-80e0-bfb1-f9f8798c0bd4" class="">
+</p><hr id="22bce935-d3bb-80fd-adc3-d7e033959578"/><div id="22bce935-d3bb-80ed-8d82-fa3ed3e792f1" class="column-list"><div id="22bce935-d3bb-8046-b6b2-f220af7d8655" style="width:33.33333333333333%" class="column"><h2 id="22bce935-d3bb-807e-a244-dd21bd8d10fb" class=""><strong>YAN LAB</strong></h2><p id="22bce935-d3bb-8015-a721-ed66891cb4e5" class="">
+</p><p id="22bce935-d3bb-801f-a2b5-c42c695adc1f" class=""><em><mark class="highlight-gray">This is the Research Group of</mark></em></p><p id="22bce935-d3bb-80bb-a0e1-deceb31e41c1" class=""><em><mark class="highlight-gray">Zhiqiang YAN.</mark></em></p><p id="22bce935-d3bb-803d-983b-f1f8b2fe5a53" class="">
+</p><p id="22bce935-d3bb-80a0-b5c0-d05354e0dc9c" class=""><mark class="highlight-gray">Studying the Molecular and Circuitry Basis of Sensory Perception.</mark></p><p id="22bce935-d3bb-80f4-b78f-c72f329d13db" class="">
+</p></div><div id="22bce935-d3bb-80ef-84bb-cf9d2503ccd0" style="width:33.33333333333333%" class="column"><h2 id="22bce935-d3bb-8003-8431-d4bd95ff1a61" class=""><mark class="highlight-default"><strong>RECRUITMENT</strong></mark></h2><p id="22bce935-d3bb-80fa-adad-f727e74f2b75" class="">
+</p><p id="22bce935-d3bb-80ac-bae8-d6f42c19c304" class=""><mark class="highlight-default">The group welcomes applications from prospective postdocs and students.</mark></p><p id="22bce935-d3bb-801c-9960-efc389f7fdcb" class="">
+</p></div><div id="22bce935-d3bb-80b7-9d33-fc3eedccdf15" style="width:33.33333333333337%" class="column"><h2 id="22bce935-d3bb-8063-aa8b-cff24bd6679b" class=""><strong>LOCATION</strong></h2><p id="22bce935-d3bb-807b-a3d6-fb52a617d023" class="">
+</p><p id="22bce935-d3bb-8003-ab61-ebf1911dfc8b" class="">Capital Medical University &amp; Chinese Institutes for Medical Research, Beijing</p><p id="22bce935-d3bb-8083-85de-d3749799f134" class="">
+</p><p id="22bce935-d3bb-805a-8371-dcd50a7e0fd2" class="">Beijing  No. 10, Xi Toutiao, outside You&#x27;anmen, Fengtai District, Beijing, China</p></div></div></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
