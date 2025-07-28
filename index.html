@@ -1,1 +1,697 @@
 <h1> Yan's Lab</h1>
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>YAN LAB</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="22bce935-d3bb-808c-ba45-f944d994cefe" class="page sans"><header><img class="page-cover-image" src="YAN%20LAB%2022bce935d3bb808cba45f944d994cefe/Asset_1.png" style="object-position:center 10.919999999999996%"/><h1 class="page-title">YAN LAB</h1><p class="page-description"></p></header><div class="page-body"><p id="22bce935-d3bb-80df-acb1-f50ea97060fe" class="">Lab of Sensory Neurobiology</p><hr id="22bce935-d3bb-808b-931f-c9b082bb9a02"/><div id="22bce935-d3bb-80cf-acc3-ddabf76da850" class="column-list"><div id="22bce935-d3bb-80e8-9277-ec8665deb94e" style="width:37.5%" class="column"><p id="22cce935-d3bb-8031-bbb6-c84a57dc2495" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="22bce935-d3bb-80f3-82d9-f0ff397a17a2"><div style="width:100%"><div id="22bce935-d3bb-8169-90c3-c37d79b1bc88" class="collection-content"><h4 class="collection-title">Categories</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><div data-testid="/icons/font_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/font_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/font_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>Name</th></tr></thead><tbody><tr id="22bce935-d3bb-8167-a36a-eccad50385c0"><td class="cell-title"><a href="YAN%20LAB%2022bce935d3bb808cba45f944d994cefe/Categories%2022bce935d3bb816990c3c37d79b1bc88/Zhiqiang%20Yan%2022bce935d3bb8167a36aeccad50385c0.html">Zhiqiang Yan</a></td></tr><tr id="22bce935-d3bb-81c5-add9-e62fb666d4d5"><td class="cell-title"><a href="YAN%20LAB%2022bce935d3bb808cba45f944d994cefe/Categories%2022bce935d3bb816990c3c37d79b1bc88/Research%2022bce935d3bb81c5add9e62fb666d4d5.html">Research</a></td></tr><tr id="22bce935-d3bb-8147-a7c0-c761ad1b91e5"><td class="cell-title"><a href="YAN%20LAB%2022bce935d3bb808cba45f944d994cefe/Categories%2022bce935d3bb816990c3c37d79b1bc88/Publications%2022bce935d3bb8147a7c0c761ad1b91e5.html">Publications</a></td></tr><tr id="22bce935-d3bb-8160-ba8d-ca53ef8c8508"><td class="cell-title"><a href="YAN%20LAB%2022bce935d3bb808cba45f944d994cefe/Categories%2022bce935d3bb816990c3c37d79b1bc88/Members%2022bce935d3bb8160ba8dca53ef8c8508.html">Members</a></td></tr><tr id="22bce935-d3bb-81fe-93b1-d966f491499e"><td class="cell-title"><a href="YAN%20LAB%2022bce935d3bb808cba45f944d994cefe/Categories%2022bce935d3bb816990c3c37d79b1bc88/Gallery%2022bce935d3bb81fe93b1d966f491499e.html">Gallery</a></td></tr><tr id="22bce935-d3bb-8147-8410-cbbccebb9863"><td class="cell-title"><a href="YAN%20LAB%2022bce935d3bb808cba45f944d994cefe/Categories%2022bce935d3bb816990c3c37d79b1bc88/Join%20us%2022bce935d3bb81478410cbbccebb9863.html">Join us</a></td></tr><tr id="22bce935-d3bb-81c2-9b1d-c62c825ac484"><td class="cell-title"><a href="YAN%20LAB%2022bce935d3bb808cba45f944d994cefe/Categories%2022bce935d3bb816990c3c37d79b1bc88/Contact%20us%2022bce935d3bb81c29b1dc62c825ac484.html">Contact us</a></td></tr></tbody></table><br/><br/></div><p id="22cce935-d3bb-80da-8753-ff8d3e168e96" class="">
+</p><hr id="22bce935-d3bb-817a-b19f-f74e55fedeb6"/><figure id="22bce935-d3bb-8159-aba3-d6b460867f24" class="link-to-page"><a href="YAN%20LAB%2022bce935d3bb808cba45f944d994cefe/All%20Members%2022bce935d3bb8159aba3d6b460867f24.html"><img class="icon" src="https://www.notion.so/icons/meeting_blue.svg"/>All Members</a></figure><hr id="22cce935-d3bb-8042-b0f0-f37a52e4405f"/></div></figure></div><div id="22bce935-d3bb-80d0-8186-d17cb631b4bf" style="width:87.5%" class="column"><div id="22cce935-d3bb-8013-8dee-d54d468ab695" class="column-list"><div id="22cce935-d3bb-80ac-9c8b-d833ee86fc18" style="width:4.166666666666666%" class="column"><div id="22cce935-d3bb-8090-b8e1-ff56c9fc28f6" class="column-list"><div id="22cce935-d3bb-80d6-9f5a-d1f85b821df0" style="width:100%" class="column"><p id="22cce935-d3bb-8052-9d24-d21fcbb8786b" class="">
+</p></div><div id="22cce935-d3bb-807d-8076-ca994c570e41" style="width:100%" class="column"><p id="22cce935-d3bb-8014-8c16-f2e453fde2a6" class="">
+</p></div></div></div><div id="22cce935-d3bb-8062-a9c7-e39fdf0a82ad" style="width:95.83333333333333%" class="column"><h1 id="22bce935-d3bb-80b8-a9e1-f0c84cf0d551" class=""><strong>ABOUT US</strong></h1><hr id="22bce935-d3bb-80e3-8bee-f4a66084c02f"/><blockquote id="22bce935-d3bb-8002-9c5e-ff895c5af04b" class="">We study sensory neurobiology, identifying the receptors and neural circuits for sensation and interoception, and investigating their working mechanisms and the relationship to diseases in the sensory system.  </blockquote><figure id="22bce935-d3bb-8033-8309-dbe96bf81794" class="image" style="text-align:center"><a href="YAN%20LAB%2022bce935d3bb808cba45f944d994cefe/Screenshot202025-07-0820at2011.02.46.png"><img style="width:576px" src="YAN%20LAB%2022bce935d3bb808cba45f944d994cefe/Screenshot202025-07-0820at2011.02.46.png"/></a></figure></div><div id="22cce935-d3bb-8046-880b-d0e44f86946c" style="width:8.333333333333346%" class="column"><p id="22cce935-d3bb-8031-aee2-d4cb2c416b16" class="">
+</p></div></div><p id="22cce935-d3bb-801f-8748-e80150e0a78e" class="">
+</p></div></div><h1 id="22bce935-d3bb-8072-80b7-c8a4d8b943c7" class="">NEWS</h1><hr id="22bce935-d3bb-80b5-acbe-d74dba7dd017"/><div id="22bce935-d3bb-806f-b178-e0a7068a5825" class="column-list"><div id="22bce935-d3bb-80ab-bb5a-f2d8b7eb633c" style="width:100%" class="column"><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="22bce935-d3bb-80e4-8d82-e6e1e86378ac"><div style="width:100%"><p id="22bce935-d3bb-8023-8977-f5b939eaef03" class=""><strong><a href="https://mp.weixin.qq.com/s/TAsNX-t-Za_kAxHikqsGYQ">Yan lab published a new research in Neuron: Human TMC1 and TMC2 are Mechanically Gated Ion Channels</a></strong><strong>.</strong></p><figure id="22bce935-d3bb-809d-a776-f1fe983040c3"><div class="source"><a href="https://mmbiz.qpic.cn/sz_mmbiz_jpg/3Lia9wNqdFLTOPibqUiaGdoFsJy5krItOibejgncZ4jW3xdFEwjB5YKgZzDqyoJ7JSD7ibGuY0pENa9EABiadR5RSdUg/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1">https://mmbiz.qpic.cn/sz_mmbiz_jpg/3Lia9wNqdFLTOPibqUiaGdoFsJy5krItOibejgncZ4jW3xdFEwjB5YKgZzDqyoJ7JSD7ibGuY0pENa9EABiadR5RSdUg/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1</a></div></figure></div></figure><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="22bce935-d3bb-8024-89a4-ed67cd391876"><div style="width:100%"><p id="22bce935-d3bb-809b-bf96-ec9964ee896c" class=""><strong><a href="https://mp.weixin.qq.com/s/p35xbAkm22KeaUGnIk-2fA">Yan lab published a new research in Genome Research: Proactive functional classification of all possible missense single-nucleotide variants in KCNQ4.</a></strong></p><figure id="22bce935-d3bb-8038-9e9d-e30ee4f30c93"><div class="source"><a href="https://mmbiz.qpic.cn/mmbiz_png/wSic42x0AB45K17j9M0OwaP8aGocueBrpxwE8FrODJvpoyicNbxRLEVnQlpDMXsQ8LvHJzddMqcmZekBHyP65Qnw/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1">https://mmbiz.qpic.cn/mmbiz_png/wSic42x0AB45K17j9M0OwaP8aGocueBrpxwE8FrODJvpoyicNbxRLEVnQlpDMXsQ8LvHJzddMqcmZekBHyP65Qnw/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1</a></div></figure></div></figure><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="22bce935-d3bb-8087-8fec-eb1bf4f46b9b"><div style="width:100%"><p id="22bce935-d3bb-80ba-9858-fb6713935268" class=""><strong><a href="https://mp.weixin.qq.com/s/p35xbAkm22KeaUGnIk-2fA"><span style="border-bottom:0.05em solid">Yan lab published a cover article in Neuron on January 22, 2020.</span></a></strong></p><figure id="22bce935-d3bb-803b-929b-d12ebb79b865" class="image" style="text-align:center"><a href="https://static.wixstatic.com/media/9ae7cd_1bbb86b734634eae86ad37be142bb323~mv2.png/v1/fill/w_948,h_406,al_c,q_90,enc_avif,quality_auto/%E5%9B%BE%E7%89%871.png"><img style="width:432px" src="https://static.wixstatic.com/media/9ae7cd_1bbb86b734634eae86ad37be142bb323~mv2.png/v1/fill/w_948,h_406,al_c,q_90,enc_avif,quality_auto/%E5%9B%BE%E7%89%871.png"/></a></figure></div></figure><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="22bce935-d3bb-8084-bde5-cdb56efaa842"><div style="width:100%"><p id="22bce935-d3bb-807f-8769-f8d8cd7795b9" class=""><strong><a href="https://www.yan-lab.org/%E5%89%AF%E6%9C%AC-news3"><span style="border-bottom:0.05em solid">Yan lab published a new research in Nature Structural &amp; Molecular Biology: Structure of mechanosensitive OSCA channels</span></a></strong><strong><span style="border-bottom:0.05em solid">.</span></strong></p><figure id="22bce935-d3bb-80cb-adb8-c97ddbd1af1a" class="image" style="text-align:center"><a href="https://static.wixstatic.com/media/9ae7cd_ec3ad5f8d0dc4bc6995ffbbb239be1b1~mv2.png/v1/fill/w_959,h_526,al_c,lg_1,q_90,enc_avif,quality_auto/NEW3.png"><img style="width:384px" src="https://static.wixstatic.com/media/9ae7cd_ec3ad5f8d0dc4bc6995ffbbb239be1b1~mv2.png/v1/fill/w_959,h_526,al_c,lg_1,q_90,enc_avif,quality_auto/NEW3.png"/></a></figure></div></figure></div><div id="22bce935-d3bb-80f7-91e5-f50bf4d6c612" style="width:100%" class="column"><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="22bce935-d3bb-8019-ad58-f8c55e32f158"><div style="width:100%"><p id="22bce935-d3bb-80f7-8715-c1f01cf4b33b" class=""><strong><a href="https://mp.weixin.qq.com/s/xEgFFgCPpFB4uDWDtXmf7A">Yan lab published a new research in Nature Communications: Humidity response in Drosophila olfactory sensory neurons requires the mechanosensitive channel TMEM63.</a></strong></p><figure id="22bce935-d3bb-80e6-b82c-fa37b1c0b8b6"><div class="source"><a href="https://mmbiz.qpic.cn/mmbiz_png/wSic42x0AB44CKZq7aO58YDrCiclZg1koiaTdYd4utRXeU429J6HUWCSXjA7LRdpN1XWshpVZ38oZDQJewI2Mb20w/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1">https://mmbiz.qpic.cn/mmbiz_png/wSic42x0AB44CKZq7aO58YDrCiclZg1koiaTdYd4utRXeU429J6HUWCSXjA7LRdpN1XWshpVZ38oZDQJewI2Mb20w/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1</a></div></figure></div></figure><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="22bce935-d3bb-8006-a3c7-e54c73e3be25"><div style="width:100%"><p id="22bce935-d3bb-80a2-887a-d516f2f2893d" class=""><strong><a href="https://mp.weixin.qq.com/s/p35xbAkm22KeaUGnIk-2fA"><span style="border-bottom:0.05em solid">Yan lab published a new research in PNAS: Nanchung and Inactive define pore properties of the native auditory transduction channel in Drosophila.</span></a></strong></p><figure id="22bce935-d3bb-809a-8f1c-ec6fb90cbaca" class="image" style="text-align:center"><a href="https://www.szbl.ac.cn/__local/C/DC/FF/00A2F6F492D725E69EE5061106D_1CDB0433_33CCA.png?e=.png"><img style="width:240px" src="https://www.szbl.ac.cn/__local/C/DC/FF/00A2F6F492D725E69EE5061106D_1CDB0433_33CCA.png?e=.png"/></a></figure></div></figure><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="22bce935-d3bb-80bd-a728-fde4d95cb435"><div style="width:100%"><p id="22bce935-d3bb-8004-81ce-ff1c1cb03db4" class=""><strong><a href="https://www.yan-lab.org/%E5%89%AF%E6%9C%AC-news1"><span style="border-bottom:0.05em solid">Yan lab published a collaborative research：The Push-to-Open Mechanism of the Tethered Mechanosensitive Ion Channel NompC.</span></a></strong></p><figure id="22bce935-d3bb-8051-be05-f3f0b51c51c5" class="image" style="text-align:center"><a href="https://static.wixstatic.com/media/9ae7cd_734bbc3e928149778e266f48214e495c~mv2.png/v1/fill/w_640,h_404,al_c,lg_1,q_85,enc_avif,quality_auto/NEWS2.png"><img style="width:336px" src="https://static.wixstatic.com/media/9ae7cd_734bbc3e928149778e266f48214e495c~mv2.png/v1/fill/w_640,h_404,al_c,lg_1,q_85,enc_avif,quality_auto/NEWS2.png"/></a></figure></div></figure><p id="22bce935-d3bb-8058-969a-f64ee7edbb8c" class="">
+</p></div></div><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="22bce935-d3bb-80e0-8d00-ed6f7dcd92e3"><div style="width:100%"><p id="22bce935-d3bb-8002-ad19-cba5ba0e662e" class=""><strong><a href="https://www.yan-lab.org/%E5%89%AF%E6%9C%AC-news3"><span style="border-bottom:0.05em solid">Yan lab published the latest research on Cell Reports: Brv1 Is Required for Drosophila Larvae to Sense Gentle Touch.</span></a></strong></p><figure id="22bce935-d3bb-8068-83bf-d4e9dfb64a6a" class="image" style="text-align:center"><a href="https://static.wixstatic.com/media/9ae7cd_cf3770aa654d49fca7cbaf259e099fab~mv2.png/v1/fill/w_898,h_452,al_c,q_90,enc_avif,quality_auto/%E5%9B%BE%E7%89%872.png"><img style="width:384px" src="https://static.wixstatic.com/media/9ae7cd_cf3770aa654d49fca7cbaf259e099fab~mv2.png/v1/fill/w_898,h_452,al_c,q_90,enc_avif,quality_auto/%E5%9B%BE%E7%89%872.png"/></a></figure></div></figure><p id="22bce935-d3bb-8040-ac21-d8e497a54bd5" class="">
+</p><p id="22cce935-d3bb-8033-a334-e9d9a0574c80" class="">
+</p><div><hr id="22bce935-d3bb-808a-a8d0-ea1825a6ada8"/><div id="22bce935-d3bb-80b3-85d4-f2001f339a38" class="column-list"><div id="22bce935-d3bb-801c-a3fe-cbb823381058" style="width:100%" class="column"><h3 id="22bce935-d3bb-8084-aa36-e74610fee355" class=""><strong>YAN LAB</strong></h3><p id="22bce935-d3bb-80da-87b3-db0467fb9a29" class="">
+</p><p id="22bce935-d3bb-805b-8c9a-c521395acb74" class=""><em><mark class="highlight-gray"><mark class="highlight-default_background">This is the Research Group of</mark></mark></em></p><p id="22bce935-d3bb-8046-b006-fba5d830b3cc" class=""><em><mark class="highlight-gray"><mark class="highlight-default_background">Zhiqiang YAN.</mark></mark></em></p><p id="22bce935-d3bb-8008-ba57-e5f8ba846874" class="">
+</p><p id="22bce935-d3bb-80be-b6b7-ccfc59047a7d" class=""><mark class="highlight-gray"><mark class="highlight-default_background">Studying the Molecular and Circuitry Basis of Sensory Perception.</mark></mark></p></div><div id="22bce935-d3bb-8079-ba47-d3805251df4b" style="width:100%" class="column"><h3 id="22bce935-d3bb-804f-b225-f672991c36c3" class=""><strong>RECRUITMENT</strong></h3><p id="22bce935-d3bb-80a5-bcbe-f58201809b36" class="">
+</p><p id="22bce935-d3bb-80e5-8502-c9eaf9f0a565" class="">The group welcomes applications from prospective postdocs and students.</p><p id="22bce935-d3bb-80a6-b97f-f369f1bf5efb" class="">
+</p></div><div id="22bce935-d3bb-80ef-b29e-f85f2f61ef5b" style="width:100%" class="column"><h3 id="22bce935-d3bb-8080-a3be-e7e5189d43f6" class=""><strong>LOCATION</strong></h3><p id="22bce935-d3bb-80e7-a717-ece822ac11c3" class="">
+</p><p id="22bce935-d3bb-8009-a813-c222fcfc5b72" class="">Capital Medical University &amp; Chinese Institutes for Medical Research, Beijing</p><p id="22bce935-d3bb-8092-94ca-d6d46491dc5a" class="">Beijing  No. 10, Xi Toutiao, outside You&#x27;anmen, Fengtai District, Beijing, China</p></div></div><p id="22bce935-d3bb-8072-bd81-c4b9d7e00e04" class="">
+</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
