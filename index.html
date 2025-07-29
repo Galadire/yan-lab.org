@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yan Lab</title>
+    <title>Yan Lab | Lab of Sensory Neurobiology</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script>
@@ -11,7 +10,7 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#165DFF',
+                        primary: '#1F2C4C',
                         secondary: '#36CFC9',
                         accent: '#722ED1',
                         dark: '#1D2129',
@@ -39,23 +38,41 @@
                 transform: translateY(-5px);
                 box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
             }
+            .nav-scrolled {
+                @apply bg-primary/95 text-white shadow-lg;
+            }
+            .nav-link {
+                @apply transition-all duration-300 hover:text-secondary relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-secondary after:transition-all hover:after:w-full;
+            }
+            .contact-icon {
+                @apply text-primary text-xl mr-3;
+            }
+            .profile-card {
+                transition: all 0.3s ease;
+            }
+            .profile-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            }
         }
     </style>
 </head>
 <body class="bg-gray-50 font-sans text-dark">
     <!-- Navigation -->
-    <nav class="bg-white shadow-md fixed w-full z-10 transition-all duration-300">
+    <nav id="main-nav" class="bg-white shadow-md fixed w-full z-50 transition-all duration-300">
         <div class="container mx-auto px-4 py-3">
             <div class="flex justify-between items-center">
                 <a href="#" class="text-2xl font-bold text-primary">Yan Lab</a>
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex space-x-8">
-                    <a href="#news" class="hover:text-primary transition">News</a>
-                    <a href="#introduction" class="hover:text-primary transition">Introduction</a>
-                    <a href="#research" class="hover:text-primary transition">Research</a>
-                    <a href="#publications" class="hover:text-primary transition">Publications</a>
-                    <a href="#contact" class="hover:text-primary transition">Contact</a>
+                    <a href="#zhiqiang-yan" class="nav-link">Zhiqiang Yan</a>
+                    <a href="#research" class="nav-link">Research</a>
+                    <a href="#publications" class="nav-link">Publications</a>
+                    <a href="#members" class="nav-link">Members</a>
+                    <a href="#gallery" class="nav-link">Gallery</a>
+                    <a href="#join-us" class="nav-link">Join us</a>
+                    <a href="#contact" class="nav-link">Contact</a>
                 </div>
                 
                 <!-- Mobile menu button -->
@@ -70,220 +87,850 @@
         <!-- Mobile Navigation -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
             <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
-                <a href="#news" class="py-2 hover:text-primary transition">News</a>
-                <a href="#introduction" class="py-2 hover:text-primary transition">Introduction</a>
+                <a href="#zhiqiang-yan" class="py-2 hover:text-primary transition">Zhiqiang Yan</a>
                 <a href="#research" class="py-2 hover:text-primary transition">Research</a>
                 <a href="#publications" class="py-2 hover:text-primary transition">Publications</a>
+                <a href="#members" class="py-2 hover:text-primary transition">Members</a>
+                <a href="#gallery" class="py-2 hover:text-primary transition">Gallery</a>
+                <a href="#join-us" class="py-2 hover:text-primary transition">Join us</a>
                 <a href="#contact" class="py-2 hover:text-primary transition">Contact</a>
             </div>
         </div>
     </nav>
 
+
     <!-- Hero Section -->
-    <header class="pt-24 pb-16 bg-gradient-to-br from-primary/90 to-accent/90 text-white">
+    <header class="pt-24 pb-16 bg-gradient-to-br from-primary to-primary/80 text-white">
         <div class="container mx-auto px-4">
             <div class="max-w-3xl mx-auto text-center">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-shadow">Welcome to Yan Lab !</h1>
-                <p class="text-xl md:text-2xl opacity-90 mb-8">Exploring the frontier of mechanosensitive ion channels and sensory biology</p>
-                <a href="#news" class="inline-block bg-white text-primary font-semibold px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
-                    Latest Research
-                </a>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-shadow">ABOUT US</h1>
+                <p class="text-xl md:text-2xl opacity-90 mb-8">We study sensory neurobiology, identifying the receptors and neural circuits for sensation and interoception, and investigating their working mechanisms and the relationship to diseases in the sensory system.</p>
+                <a href="#research" class="inline-block bg-white text-primary font-semibold px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">Explore Research</a>
             </div>
         </div>
     </header>
 
-    <!-- News Section -->
-    <section id="news" class="py-16 bg-white">
+
+    <!-- Zhiqiang Yan Section -->
+    <section id="zhiqiang-yan" class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-dark">Latest News</h2>
+            <h2 class="text-3xl font-bold text-center mb-12 text-primary">Zhiqiang Yan</h2>
+            
+            <div class="max-w-6xl mx-auto bg-light rounded-xl shadow-lg overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-3">
+                    <div class="bg-primary p-8 text-white flex flex-col justify-center items-center text-center">
+                        <div class="w-48 h-48 rounded-full overflow-hidden mb-6 border-4 border-white/30">
+                            <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/35bfb5e31cd14144b43c5a343b26fa9b~tplv-a9rns2rl98-image.image?rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1754376782&amp;x-signature=hKhVeHePG0neDYI00O%2ByN1D2Z2Q%3D" alt="Zhiqiang Yan" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Principal Investigator</h3>
+                        <p class="opacity-90 mb-6">Ph.D. in Neuroscience</p>
+                        <div class="space-y-2 mb-6 text-center">
+                            <p>Professor and Dean</p>
+                            <p>School of Basic Medical Sciences</p>
+                            <p>Capital Medical University, China</p>
+                        </div>
+                        <div class="space-y-2 mb-6 text-center">
+                            <p>Investigator and Director</p>
+                            <p>Institute for Medical Physiology</p>
+                            <p>Chinese Institutes for Medical Research</p>
+                            <p>Beijing, China</p>
+                        </div>
+                        <div class="flex flex-col space-y-2 mb-6">
+                            <a href="mailto:zqyan@ccmu.edu.cn" class="text-white hover:text-secondary transition flex items-center">
+                                <i class="fa fa-envelope mr-2"></i> zqyan@ccmu.edu.cn
+                            </a>
+                            <a href="mailto:zqyan@cimrbj.ac.cn" class="text-white hover:text-secondary transition flex items-center">
+                                <i class="fa fa-envelope mr-2"></i> zqyan@cimrbj.ac.cn
+                            </a>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 p-8">
+                        <h4 class="text-xl font-bold mb-4 text-primary">Introduction</h4>
+                        <p class="text-gray-700 mb-4">
+                            Dr. Zhiqiang Yan obtained his bachelor's degree from Fudan University in 2004. He then pursued his Ph.D. degree in Neurobiology at the Institute of Neuroscience, Chinese Academy of Sciences, National Institute of Biological Sciences, Beijing, and the Institute of Biophysics, Chinese Academy of Sciences, from 2004 to 2009.
+                        </p>
+                        <p class="text-gray-700 mb-4">
+                            He received postdoctoral training in the Lily Jan and Yuh Nung Jan group at the Howard Hughes Medical Institute &amp; University of California at San Francisco, San Francisco, USA. In 2013, he was appointed as a professor at Fudan University.
+                        </p>
+                        <p class="text-gray-700 mb-4">
+                            Then, he joined the Institute of Molecular Physiology of Shenzhen Bay Laboratory as a senior principal investigator in 2020 and was appointed as deputy director. In 2024, he assumed the roles of professor and dean at the School of Basic Medical Sciences, Capital Medical University. Also, he became an investigator and director at the Institute for Medical Physiology, Chinese Institutes for Medical Research, Beijing.
+                        </p>
+                        <p class="text-gray-700 mb-4">
+                            Dr. Yan has published papers as the first or corresponding author in journals including <em>Nature</em>, <em>Neuron</em>, <em>Nature Structural &amp; Molecular Biology</em>, <em>PNAS</em>, <em>Nature Communications</em>, <em>eLife</em>, <em>Cell Reports</em>, etc. He was funded by 4 National Key Research and Development Projects of China and 2 programs of the National Natural Science Foundation of China.
+                        </p>
+
+                        <h4 class="text-xl font-bold mt-8 mb-4 text-primary">Biography</h4>
+                        
+                        <h5 class="font-bold text-lg mb-3 text-primary/80">Work Experience</h5>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex">
+                                <div class="min-w-[130px] font-semibold">2024 - Present</div>
+                                <div>
+                                    <div class="font-medium">Investigator and Director</div>
+                                    <div>Institute for Medical Physiology, Chinese Institutes for Medical Research, Beijing</div>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="min-w-[130px] font-semibold">2024 - Present</div>
+                                <div>
+                                    <div class="font-medium">Professor and Dean</div>
+                                    <div>School of Basic Medical Sciences, Capital Medical University</div>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="min-w-[130px] font-semibold">2020 - 2024</div>
+                                <div>
+                                    <div class="font-medium">Senior Investigator and Deputy Director</div>
+                                    <div>Institute of Molecular Physiology, Shenzhen Bay Laboratory</div>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="min-w-[130px] font-semibold">2013 - 2020</div>
+                                <div>
+                                    <div class="font-medium">Professor</div>
+                                    <div>Fudan University</div>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="min-w-[130px] font-semibold">2009 - 2013</div>
+                                <div>
+                                    <div class="font-medium">Postdoctoral Researcher</div>
+                                    <div>HHMI &amp; UCSF</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h5 class="font-bold text-lg mb-3 text-primary/80">Educational Background</h5>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex">
+                                <div class="min-w-[130px] font-semibold">2004 - 2009</div>
+                                <div>
+                                    <div class="font-medium">Ph.D.</div>
+                                    <div>Institute of Neuroscience, Chinese Academy of Sciences, National Institute of Biological Sciences, Beijing &amp; Institute of Biophysics, Chinese Academy of Sciences</div>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="min-w-[130px] font-semibold">2000 - 2004</div>
+                                <div>
+                                    <div class="font-medium">B.S.</div>
+                                    <div>Fudan University</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h5 class="font-bold text-lg mb-3 text-primary/80">Awards</h5>
+                        <div class="space-y-3">
+                            <div class="flex">
+                                <div class="min-w-[130px] font-semibold">2010 - 2013</div>
+                                <div>Human Frontier Science Program (HFSP) Long-term Fellowship</div>
+                            </div>
+                            <div class="flex">
+                                <div class="min-w-[130px] font-semibold">2014</div>
+                                <div>The Program for Professor of Special Appointment (Eastern Scholar of Shanghai)</div>
+                            </div>
+                            <div class="flex">
+                                <div class="min-w-[130px] font-semibold">2014</div>
+                                <div>The Shanghai Rising-Star Program</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- News Section -->
+    <section id="news" class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-primary">Latest News</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- News Item 1 -->
-                <div class="bg-light rounded-xl shadow-md overflow-hidden card-hover">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/3Lia9wNqdFLTOPibqUiaGdoFsJy5krItOibejgncZ4jW3xdFEwjB5YKgZzDqyoJ7JSD7ibGuY0pENa9EABiadR5RSdUg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1" alt="Research on Human TMC1 and TMC2" class="w-full h-full object-cover transition-transform hover:scale-105 duration-500">
+                <a href="https://mp.weixin.qq.com/s/TAsNX-t-Za_kAxHikqsGYQ" class="block">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/fc5d9687ec9f4938ab5783026f86b38d~tplv-a9rns2rl98-image.image?rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1754376843&amp;x-signature=l4SmgY654s2jpCbLlEcaaWnN0mM%3D" alt="Research on Human TMC1 and TMC2" class="w-full h-full object-cover transition-transform hover:scale-105 duration-500">
+                        </div>
+                        <div class="p-6">
+                            <p class="text-primary font-semibold mb-2">Recent Publication</p>
+                            <h3 class="text-xl font-bold mb-3">Neuron</h3>
+                            <p class="text-gray-700">Human TMC1 and TMC2 are Mechanically Gated Ion Channels.</p>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <p class="text-primary font-semibold mb-2">Recent Publication</p>
-                        <h3 class="text-xl font-bold mb-3">Neuron</h3>
-                        <p class="text-gray-700">Human TMC1 and TMC2 are Mechanically Gated Ion Channels.</p>
-                    </div>
-                </div>
+                </a>
                 
                 <!-- News Item 2 -->
-                <div class="bg-light rounded-xl shadow-md overflow-hidden card-hover">
-                    <div class="h-48 overflow-hidden">
-                        <img src="yan2.png" alt="Drosophila humidity response research" class="w-full h-full object-cover transition-transform hover:scale-105 duration-500">
+                <a href="https://mp.weixin.qq.com/s/xEgFFgCPpFB4uDWDtXmf7A" class="block">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/a5140d5d68c24b6ea8236862d1a95479~tplv-a9rns2rl98-image.image?rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1754376915&amp;x-signature=ABsT5p1OY9xyxOj7GTdcgM%2BPxx0%3D" alt="Drosophila humidity response research" class="w-full h-full object-cover transition-transform hover:scale-105 duration-500">
+                        </div>
+                        <div class="p-6">
+                            <p class="text-primary font-semibold mb-2">Recent Publication</p>
+                            <h3 class="text-xl font-bold mb-3">Nature Communications</h3>
+                            <p class="text-gray-700">Humidity response in Drosophila olfactory sensory neurons requires the mechanosensitive channel TMEM63.</p>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <p class="text-primary font-semibold mb-2">Recent Publication</p>
-                        <h3 class="text-xl font-bold mb-3">Nature Communications</h3>
-                        <p class="text-gray-700">Humidity response in Drosophila olfactory sensory neurons requires the mechanosensitive channel TMEM63.</p>
-                    </div>
-                </div>
+                </a>
                 
                 <!-- News Item 3 -->
-                <div class="bg-light rounded-xl shadow-md overflow-hidden card-hover">
-                    <div class="h-48 overflow-hidden">
-                        <img src="8d5d6cdf56d3ec4352ee6234d3dcc93.png" alt="KCNQ4 research" class="w-full h-full object-cover transition-transform hover:scale-105 duration-500">
+                <a href="https://mp.weixin.qq.com/s/p35xbAkm22KeaUGnIk-2fA" class="block">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/dc8671ca18184a74a1eabb9099ef7000~tplv-a9rns2rl98-image.image?rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1754376950&amp;x-signature=mssAqhn5LohK0WoV8HlD28O8XCQ%3D" alt="KCNQ4 research" class="w-full h-full object-cover transition-transform hover:scale-105 duration-500">
+                        </div>
+                        <div class="p-6">
+                            <p class="text-primary font-semibold mb-2">Recent Publication</p>
+                            <h3 class="text-xl font-bold mb-3">Genome Research</h3>
+                            <p class="text-gray-700">Proactive functional classification of all possible missense single-nucleotide variants in KCNQ4.</p>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <p class="text-primary font-semibold mb-2">Recent Publication</p>
-                        <h3 class="text-xl font-bold mb-3">Genome Research</h3>
-                        <p class="text-gray-700">Proactive functional classification of all possible missense single-nucleotide variants in KCNQ4.</p>
-                    </div>
-                </div>
+                </a>
                 
                 <!-- News Item 4 -->
-                <div class="bg-light rounded-xl shadow-md overflow-hidden card-hover">
-                    <div class="h-48 overflow-hidden">
-                        <img src="图片1.png" alt="PNAS publication" class="w-full h-full object-cover transition-transform hover:scale-105 duration-500">
+                <a href="https://mp.weixin.qq.com/s/p35xbAkm22KeaUGnIk-2fA" class="block">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/da763ceb600144f9901605bd3c6bf64c~tplv-a9rns2rl98-image.image?rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1754377085&amp;x-signature=KcyprwAAfOvl8KQXsus0z5QQ88o%3D" alt="PNAS publication" class="w-full h-full object-cover transition-transform hover:scale-105 duration-500">
+                        </div>
+                        <div class="p-6">
+                            <p class="text-primary font-semibold mb-2">Recent Publication</p>
+                            <h3 class="text-xl font-bold mb-3">PNAS</h3>
+                            <p class="text-gray-700">Nanchung and Inactive define pore properties of the native auditory transduction channel in Drosophila.</p>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <p class="text-primary font-semibold mb-2">Recent Publication</p>
-                        <h3 class="text-xl font-bold mb-3">PNAS</h3>
-                        <p class="text-gray-700">Nanchung and Inactive define pore properties of the native auditory transduction channel in Drosophila.</p>
-                    </div>
-                </div>
+                </a>
                 
                 <!-- News Item 5 -->
-                <div class="bg-light rounded-xl shadow-md overflow-hidden card-hover">
-                    <div class="h-48 overflow-hidden">
-                        <img src="yan2.png" alt="Neuron cover article" class="w-full h-full object-cover transition-transform hover:scale-105 duration-500">
+                <a href="https://mp.weixin.qq.com/s/p35xbAkm22KeaUGnIk-2fA" class="block">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/3978b94434c64853ae7a472d342441db~tplv-a9rns2rl98-image.image?rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1754377145&amp;x-signature=bZcjogB7cluinzC%2BcGPiUpyGc6s%3D" alt="Neuron cover article" class="w-full h-full object-cover transition-transform hover:scale-105 duration-500">
+                        </div>
+                        <div class="p-6">
+                            <p class="text-primary font-semibold mb-2">Featured Publication</p>
+                            <h3 class="text-xl font-bold mb-3">Neuron (Cover Article)</h3>
+                            <p class="text-gray-700">Published on January 22, 2020.</p>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <p class="text-primary font-semibold mb-2">Featured Publication</p>
-                        <h3 class="text-xl font-bold mb-3">Neuron (Cover Article)</h3>
-                        <p class="text-gray-700">Published on January 22, 2020.</p>
-                    </div>
-                </div>
+                </a>
                 
                 <!-- News Item 6 -->
-                <div class="bg-light rounded-xl shadow-md overflow-hidden card-hover">
-                    <div class="h-48 overflow-hidden">
-                        <img src="微信图片_20210202171322(1).png" alt="OSCA channels structure" class="w-full h-full object-cover transition-transform hover:scale-105 duration-500">
+                <a href="https://www.yan-lab.org/%E5%89%AF%E6%9C%AC-news3" class="block">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/cbf10fe5e072448cbc1fe265f77a5e4e~tplv-a9rns2rl98-image.image?rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1754377186&amp;x-signature=sLCxIoATKiKWJ1QIgz3U2BM1cCA%3D" alt="OSCA channels structure" class="w-full h-full object-cover transition-transform hover:scale-105 duration-500">
+                        </div>
+                        <div class="p-6">
+                            <p class="text-primary font-semibold mb-2">Structural Research</p>
+                            <h3 class="text-xl font-bold mb-3">Nature Structural &amp; Molecular Biology</h3>
+                            <p class="text-gray-700">Structure of mechanosensitive OSCA channels</p>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <p class="text-primary font-semibold mb-2">Structural Research</p>
-                        <h3 class="text-xl font-bold mb-3">Nature Structural & Molecular Biology</h3>
-                        <p class="text-gray-700">Structure of mechanosensitive OSCA channels</p>
+                </a>
+
+                <!-- News Item 7 - New -->
+                <a href="https://www.yan-lab.org/%E5%89%AF%E6%9C%AC-news1" class="block">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/7785e71e1d6548be98d9e8201fa6dd73~tplv-a9rns2rl98-image.image?rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1754377578&amp;x-signature=Gz7i9QiKzoz9dclPxfnjP9eHpwg%3D" alt="NompC research collaboration" class="w-full h-full object-cover transition-transform hover:scale-105 duration-500">
+                        </div>
+                        <div class="p-6">
+                            <p class="text-primary font-semibold mb-2">Collaborative Research</p>
+                            <h3 class="text-xl font-bold mb-3">eLife</h3>
+                            <p class="text-gray-700">The Push-to-Open Mechanism of the Tethered Mechanosensitive Ion Channel NompC.</p>
+                        </div>
                     </div>
-                </div>
-                
-                <!-- News Item 7 -->
-                <div class="bg-light rounded-xl shadow-md overflow-hidden card-hover md:col-span-2 lg:col-span-1">
+                </a>
+
+                <!-- News Item 8 - New -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
                     <div class="h-48 overflow-hidden">
-                        <img src="NEWS2.png" alt="Cell Reports research" class="w-full h-full object-cover transition-transform hover:scale-105 duration-500">
+                        <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/5edc868a939d405e8fe4c3bdd97d1f57~tplv-a9rns2rl98-image.image?rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1754377588&amp;x-signature=WPimeiBxN8mJ85wfs3sBBG%2BlVfE%3D" alt="Brv1 research in Drosophila larvae" class="w-full h-full object-cover transition-transform hover:scale-105 duration-500">
                     </div>
                     <div class="p-6">
                         <p class="text-primary font-semibold mb-2">Latest Research</p>
                         <h3 class="text-xl font-bold mb-3">Cell Reports</h3>
-                        <p class="text-gray-700">Brv1 Is Required for Drosophila Larvae to Sense Gentle Touch</p>
-                    </div>
-                </div>
-                
-                <!-- News Item 8 -->
-                <div class="bg-light rounded-xl shadow-md overflow-hidden card-hover md:col-span-2 lg:col-span-2">
-                    <div class="p-6 flex flex-col h-full justify-center">
-                        <p class="text-primary font-semibold mb-2">Collaborative Research</p>
-                        <h3 class="text-xl font-bold mb-3">Mechanosensitive Ion Channel Research</h3>
-                        <p class="text-gray-700">The Push-to-Open Mechanism of the Tethered Mechanosensitive Ion Channel NompC</p>
-                        <div class="mt-4 flex items-center">
-                            <span class="bg-primary/10 text-primary text-sm px-3 py-1 rounded-full">Collaboration</span>
-                            <span class="bg-secondary/10 text-secondary text-sm px-3 py-1 rounded-full ml-2">Mechanism</span>
-                            <span class="bg-accent/10 text-accent text-sm px-3 py-1 rounded-full ml-2">Structural Biology</span>
-                        </div>
+                        <p class="text-gray-700">Brv1 Is Required for Drosophila Larvae to Sense Gentle Touch.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Introduction Section -->
-    <section id="introduction" class="py-16 bg-light">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl font-bold text-center mb-12 text-dark">About Yan Lab</h2>
-                
-                <div class="bg-white rounded-xl shadow-lg p-8 md:p-10">
-                    <p class="text-lg text-gray-700 mb-6">
-                        Yan Lab is dedicated to understanding the molecular mechanisms of mechanosensation, focusing on mechanosensitive ion channels and their roles in sensory processes. Our research spans from structural biology to functional characterization, using a combination of electrophysiology, imaging, and molecular biology approaches.
-                    </p>
-                    
-                    <p class="text-lg text-gray-700 mb-6">
-                        We are particularly interested in how cells convert mechanical stimuli into electrical signals - a process fundamental to hearing, touch, balance, and many other physiological functions. By studying both vertebrate and invertebrate model systems, we aim to uncover conserved principles and unique adaptations in mechanosensory transduction.
-                    </p>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
-                        <div class="text-center p-4">
-                            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i class="fa fa-flask text-primary text-2xl"></i>
-                            </div>
-                            <h3 class="font-bold text-lg mb-2">Experimental Research</h3>
-                            <p class="text-gray-600">Cutting-edge electrophysiology and imaging techniques</p>
-                        </div>
-                        
-                        <div class="text-center p-4">
-                            <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i class="fa fa-dna text-secondary text-2xl"></i>
-                            </div>
-                            <h3 class="font-bold text-lg mb-2">Molecular Biology</h3>
-                            <p class="text-gray-600">Gene editing and functional characterization</p>
-                        </div>
-                        
-                        <div class="text-center p-4">
-                            <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i class="fa fa-cogs text-accent text-2xl"></i>
-                            </div>
-                            <h3 class="font-bold text-lg mb-2">Structural Studies</h3>
-                            <p class="text-gray-600">3D structure determination of ion channels</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Research Focus Section -->
-    <section id="research" class="py-16 bg-white">
+    <section id="research" class="py-16 bg-light">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-dark">Research Focus</h2>
+            <h2 class="text-3xl font-bold text-center mb-12 text-primary">Research</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <div class="border border-gray-200 rounded-xl p-6 hover:border-primary transition-colors">
-                    <h3 class="text-xl font-bold mb-4 text-primary">Mechanosensitive Ion Channels</h3>
-                    <p class="text-gray-700 mb-4">
-                        Investigating the structure, function, and regulation of ion channels that respond to mechanical stimuli, including TMC, TMEM63, OSCA, and NompC channels.
-                    </p>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-start">
-                            <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
-                            <span>Channel gating mechanisms</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
-                            <span>Pore properties and ion selectivity</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
-                            <span>Physiological roles in sensory systems</span>
-                        </li>
+            <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-lg p-8 md:p-10">
+                <div class="text-center mb-10">
+                    <h3 class="text-2xl font-bold mb-3 text-primary">Lab of Sensory Neurobiology</h3>
+                    <div class="w-24 h-1 bg-secondary mx-auto"></div>
+                </div>
+                
+                <p class="text-gray-700 mb-8">
+                    We study sensory neurobiology, identify the receptors and neural circuits for sensation and <a href="https://cn.bing.com/ck/a?!&amp;&amp;p=1db620cb0f19111cJmltdHM9MTY2MjI0OTYwMCZpZ3VpZD0xODM3NWE1MC0wNWExLTY0NjItMzdhZC01NDFhMDQ4ZjY1ZDQmaW5zaWQ9NTE2Mg&amp;ptn=7&amp;hsh=3&amp;fclid=18375a50-05a1-6462-37ad-541a048f65d4&amp;u=a1aHR0cHM6Ly93d3cucHN5Y2hvbG9naWNhbHNjaWVuY2Uub3JnL29ic2VydmVyL2ludGVyb2NlcHRpb24taG93LXdlLXVuZGVyc3RhbmQtb3VyLWJvZHlzLWlubmVyLXNlbnNhdGlvbnM&amp;ntb=1" class="text-primary hover:underline">interoception</a>, study their working mechanism, and relate them to diseases in the sensory system.
+                </p>
+                
+                <div class="mb-10">
+                    <h4 class="text-xl font-bold mb-4 text-primary">1. Identify the receptors for hearing, touch, pain, and thirst sensation, study the gating and assembly of the related sensory transduction complex, and explore their functions in various physiological processes, such as digestion and immunity.</h4>
+                    
+                    <p class="text-gray-700 font-semibold mb-3">Related publications：</p>
+                    <ul class="space-y-2 text-gray-600 ml-6 list-disc">
+                        <li>W. Zou#, S. Deng#, X. Chen#, J. Ruan#, H. Wang, W. Zhan, J. Wang, Z. Liu, Z. Yan*. TMEM63B functions as a mammalian hyperosmolar sensor for thirst. <em>Neuron</em>, 2025.</li>
+                        <li>S.Fu#, X. Pan#, M. Lu#, J. Dong, Z. Yan*. Human TMC1 and TMC2 are mechanically gated ion channels. <em>Neuron</em>, 2025., 2025.</li>
+                        <li>S. Li, B. Li, L. Gao, J. Wang, Z. Yan*. Humidity response in Drosophila olfactory sensory neurons requires the mechanosensitive channel TMEM63. <em>Nature Communications</em>, 2022.</li>
+                        <li>B. Li#, S. Li#, H. Zheng, Z. Yan*. Nanchung and Inactive define pore properties of the native auditory transduction channel in Drosophila. <em>Proc Natl Acad Sci USA</em>, 2021.</li>
+                        <li>Wang#, Y. Guo#, G. Li, C. Liu, L. Wang, A. Zhang, Z. Yan*, C. Song*. The Push-to-Open Mechanism of the Tethered Mechanosensitive Ion Channel NompC. <em>eLife</em>, 2021.</li>
+                        <li>Y. Jia#, Y. Zhao#, T. Kusakizako#, Y. Wang, C. Pan, Y. Zhang, O. Nureki*, M. Hattori*, Z. Yan*. TMC1 and TMC2 proteins are pore-forming subunits of mechanosensitive ion channels. <em>Neuron</em>, 2020.</li>
+                        <li>M. Zhang, D. Wang, Y. Kang, J.X. Wu, F. Yao, C. Pan, Z. Yan*, C. Song*, L. Chen*. Structure of the mechanosensitive OSCA channels. <em>Nature Structural &amp; Molecular Biology</em>, 2018.</li>
+                        <li>M. Zhang#, X. Li#, H. Zheng, X. Wen, S. Chen, J. Ye, S. Tang, F. Yao, Y. Li*, Z. Yan*. Brv1 is required for Drosophila larvae to sense gentle touch. <em>Cell Reports</em>, 2018.</li>
+                        <li>Z. Yan#, W. Zhang#, Y. He, D. Gorczyca, Y. Xiang, L.E. Cheng, S. Meltzer, L.Y. Jan, Y. N. Jan*. Drosophila NompC is a mechanotransduction channel subunit for gentle touch sensation. <em>Nature</em>, 2013.</li>
                     </ul>
                 </div>
                 
-                <div class="border border-gray-200 rounded-xl p-6 hover:border-primary transition-colors">
-                    <h3 class="text-xl font-bold mb-4 text-primary">Sensory Transduction</h3>
+                <div class="mb-10">
+                    <h4 class="text-xl font-bold mb-4 text-primary">2. Map the critical neuronal groups and circuits for sensation and <a href="https://cn.bing.com/ck/a?!&amp;&amp;p=1db620cb0f19111cJmltdHM9MTY2MjI0OTYwMCZpZ3VpZD0xODM3NWE1MC0wNWExLTY0NjItMzdhZC01NDFhMDQ4ZjY1ZDQmaW5zaWQ9NTE2Mg&amp;ptn=7&amp;hsh=3&amp;fclid=18375a50-05a1-6462-37ad-541a048f65d4&amp;u=a1aHR0cHM6Ly93d3cucHN5Y2hvbG9naWNhbHNjaWVuY2Uub3JnL29ic2VydmVyL2ludGVyb2NlcHRpb24taG93LXdlLXVuZGVyc3RhbmQtb3VyLWJvZHlzLWlubmVyLXNlbnNhdGlvbnM&amp;ntb=1" class="text-primary hover:underline">interception</a>, such as touch, pain, vestibular, and thirst sensation.</h4>
+                    
+                    <p class="text-gray-700 font-semibold mb-3">Related publications：</p>
+                    <ul class="space-y-2 text-gray-600 ml-6 list-disc">
+                        <li>S. Li, B. Li, L. Gao, J. Wang, Z. Yan*. Humidity response in Drosophila olfactory sensory neurons requires the mechanosensitive channel TMEM63. <em>Nature Communications</em>, 2022.</li>
+                        <li>W. Zhang#, Z. Yan#, B. Li, L.Y. Jan, Y. N. Jan*. Identification of motor neurons and a mechanosensitive sensory neuron in the defecation circuitry of Drosophila larvae. <em>eLife</em>, 2014.</li>
+                        <li>Z. Yan, J. Tan, C. Qin, Y. Lu, C. Ding, M. Luo*. Precise circuitry links bilaterally symmetric olfactory maps. <em>Neuron</em>, 2008.</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4 text-primary">3. Study pathogenic mechanism, diagnosis and treatment of congenital hearing loss.</h4>
+                    
+                    <p class="text-gray-700 font-semibold mb-3">Related publications：</p>
+                    <ul class="space-y-2 text-gray-600 ml-6 list-disc">
+                        <li>H. Zheng#, X. Yan#, G. Li, H. Lin, S. Deng, W. Zhuang, F. Yao, Y. Lu, X. Xia, H. Yuan, L. Jin, Z. Yan*. Proactive functional classification of all possible missense single-nucleotide variants in KCNQ4. <em>Genome Research</em>. 2022.</li>
+                        <li>X. Xia, Q. Zhang*, Y. Jia, Y. Shu, J. Yang, H. Yang, Z. Yan*. Molecular basis and restoration of function deficiencies of Kv7.4 variants associated with inherited hearing loss. <em>Hearing Research</em>, 2020.</li>
+                    </ul>
+                </div>
+                
+                <div class="mt-10 pt-6 border-t">
+                    <h4 class="text-xl font-bold mb-4 text-primary">感觉神经生物学实验室：</h4>
                     <p class="text-gray-700 mb-4">
-                        Exploring how mechanical stimuli are converted into electrical signals in various sensory systems, from Drosophila to human models.
+                        长期致力于感觉神经生物学，综合运用分子生物学、蛋白相互作用和结构分析，电生理记录、神经回路的光遗传、化学遗传和成像等技术手段，结合药物筛选和基因编辑小鼠模型，研究听觉、触觉等感觉受体的鉴定和工作机制研究，感觉系统神经回路，以及感觉系统疾病的机理和治疗，并探索这些感觉受体在其他重要生理功能中的作用。
                     </p>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-start">
-                            <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
-                            <span>Auditory transduction mechanisms</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
-                            <span>Touch and pressure sensation</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa fa-check-circle text-secondary mt-1
+                    
+                    <ol class="space-y-3 text-gray-700 ml-6 list-decimal">
+                        <li>听觉、触觉、痛觉、湿度感觉、渴觉等感觉受体的鉴定、其装配和工作机制研究，以及这些受体在其他重要生理过程中的作用，例如消化和免疫反应。</li>
+                        <li>鉴定在触觉、痛觉、平衡觉、听觉、渴觉、内脏感觉等的关键神经细胞群和神经回路。</li>
+                        <li>研究遗传性耳聋的的致病机理、诊断以及基因治疗。</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Publications Section -->
+    <section id="publications" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-primary">Publications</h2>
+            
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- Publication Filter -->
+                <div class="flex flex-wrap justify-center gap-3 mb-10">
+                    <button class="bg-primary text-white px-4 py-2 rounded-full text-sm font-medium">All</button>
+                    <button class="bg-light text-primary px-4 py-2 rounded-full text-sm font-medium hover:bg-primary/10 transition">2025</button>
+                    <button class="bg-light text-primary px-4 py-2 rounded-full text-sm font-medium hover:bg-primary/10 transition">2024</button>
+                    <button class="bg-light text-primary px-4 py-2 rounded-full text-sm font-medium hover:bg-primary/10 transition">2022</button>
+                    <button class="bg-light text-primary px-4 py-2 rounded-full text-sm font-medium hover:bg-primary/10 transition">2021</button>
+                    <button class="bg-light text-primary px-4 py-2 rounded-full text-sm font-medium hover:bg-primary/10 transition">2020</button>
+                    <button class="bg-light text-primary px-4 py-2 rounded-full text-sm font-medium hover:bg-primary/10 transition">Earlier</button>
+                </div>
+                
+                <!-- Publication List -->
+                <div class="space-y-8">
+                    <!-- 2025 Publications -->
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-primary border-b pb-2">2025</h3>
+                        <div class="space-y-4 ml-4">
+                            <div class="border-l-4 border-primary/70 pl-4 py-1">
+                                <p class="text-gray-800">W. Zou#, S. Deng#, X. Chen#, J. Ruan#, H. Wang, W. Zhan, J. Wang, Z. Liu, <strong>Z. Yan*</strong>. TMEM63B functions as a mammalian hyperosmolar sensor for thirst. <em>Neuron</em>, 2025.</p>
+                            </div>
+                            <div class="border-l-4 border-primary/70 pl-4 py-1">
+                                <p class="text-gray-800">S.Fu#, X. Pan#, M. Lu#, J. Dong, <strong>Z. Yan*</strong>. Human TMC1 and TMC2 are mechanically gated ion channels. <em>Neuron</em>, 2025.</p>
+                            </div></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2024 Publications -->
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-primary border-b pb-2">2024</h3>
+                        <div class="space-y-4 ml-4">
+                            <div class="border-l-4 border-primary/70 pl-4 py-1">
+                                <p class="text-gray-800">Y. Zhang#, Y. Xue#, Y. Ma, X. Du, B. Lu*, Y. Wang*, <strong>Z. Yan*</strong>. Improved classification and pathogenicity assessment by comprehensive functional studies in a large data set of KCNQ2 variants. <em>Life Sciences</em>, 2024, 339, 122378</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2022 Publications -->
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-primary border-b pb-2">2022</h3>
+                        <div class="space-y-4 ml-4">
+                            <div class="border-l-4 border-primary/70 pl-4 py-1">
+                                <p class="text-gray-800">H. Zheng#, X. Yan#, G. Li, H. Lin, S. Deng, W. Zhuang, F. Yao, Y. Lu, X. Xia, H. Yuan, L. Jin, <strong>Z. Yan*</strong>. Proactive functional classification of all possible missense single-nucleotide variants in KCNQ4. <em>Genome Research</em>, 2022, 32: 1573-1584.</p>
+                            </div>
+                            <div class="border-l-4 border-primary/70 pl-4 py-1">
+                                <p class="text-gray-800">S. Li, B. Li, L. Gao, J. Wang, <strong>Z. Yan*</strong>. Humidity response in Drosophila olfactory sensory neurons requires the mechanosensitive channel TMEM63. <em>Nature Communications</em>, 2022, 13(1): 3814.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2021 Publications -->
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-primary border-b pb-2">2021</h3>
+                        <div class="space-y-4 ml-4">
+                            <div class="border-l-4 border-primary/70 pl-4 py-1">
+                                <p class="text-gray-800">B. Li#, S. Li#, H. Zheng, <strong>Z. Yan*</strong>. Nanchung and Inactive define pore properties of the native auditory transduction channel in Drosophila. <em>Proc Natl Acad Sci USA</em>, 2021,118 (49) e2106459118.</p>
+                            </div>
+                            <div class="border-l-4 border-primary/70 pl-4 py-1">
+                                <p class="text-gray-800">Y. Wang#, Y. Guo#, G. Li, C. Liu, L. Wang, A. Zhang, <strong>Z. Yan*</strong>, C. Song*. The Push-to-Open Mechanism of the Tethered Mechanosensitive Ion Channel NompC. <em>eLife</em>, 2021,10:e58388.</p>
+                            </div>
+                            <div class="border-l-4 border-primary/70 pl-4 py-1">
+                                <p class="text-gray-800">W. Zhuang, <strong>Z. Yan*</strong>. The S2-S3 Loop of Kv7.4 Channels Is Essential for Calmodulin Regulation of Channel Activation, <em>Frontiers in Physiology</em>, 2021, 11:604134.</p>
+                            </div>
+                            <div class="border-l-4 border-primary/70 pl-4 py-1">
+                                <p class="text-gray-800">B. Li, S. Li, <strong>Z. Yan*</strong>. Axonemal Dynein DNAH5 is Required for Sound Sensation in Drosophila Larvae. <em>Neuroscience Bulletin</em>, 2021.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2020 Publications -->
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-primary border-b pb-2">2020</h3>
+                        <div class="space-y-4 ml-4">
+                            <div class="border-l-4 border-primary/70 pl-4 py-1">
+                                <p class="text-gray-800">Y. Jia#, Y. Zhao#, T. Kusakizako#, Y. Wang, C. Pan, Y. Zhang, O. Nureki*, M. Hattori*, <strong>Z. Yan*</strong>. TMC1 and TMC2 proteins are pore-forming subunits of mechanosensitive ion channels. <em>Neuron</em>, 2020, 105, 310–321.</p>
+                            </div>
+                            <div class="border-l-4 border-primary/70 pl-4 py-1">
+                                <p class="text-gray-800">X. Xia, Q. Zhang*, Y. Jia, Y. Shu, J. Yang, H. Yang, <strong>Z. Yan*</strong>. Molecular basis and restoration of function deficiencies of Kv7.4 variants associated with inherited hearing loss, <em>Hearing Research</em>, 2020, 388.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2018 Publications -->
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-primary border-b pb-2">2018</h3>
+                        <div class="space-y-4 ml-4">
+                            <div class="border-l-4 border-primary/70 pl-4 py-1">
+                                
+                                <p class="text-gray-800">M. Zhang, D. Wang, Y. Kang, J.X. Wu, F. Yao, C. Pan, <strong>Z. Yan*</strong>, C. Song*, L. Chen*. Structure of the mechanosensitive OSCA channels. <em>Nature Structural &amp; Molecular Biology</em>, 2018, 25, 850–858.</p>
+                            </div>
+                            <div class="border-l-4 border-primary/70 pl-4 py-1">
+                                <p class="text-gray-800">M. Zhang#, X. Li#, H. Zheng, X. Wen, S. Chen, J. Ye, S. Tang, F. Yao, Y. Li*, <strong>Z. Yan*</strong>. Brv1 is required for Drosophila larvae to sense gentle touch. <em>Cell Reports</em>, 2018, 23, 23-31.</p>
+                            </div>
+                            <div class="border-l-4 border-primary/70 pl-4 py-1">
+                                <p class="text-gray-800">Y. Sun, Y. Jia, Y. Guo, F. Chen*, <strong>Z. Yan*</strong>. Taurine transporter dEAAT2 is required for auditory transduction in Drosophila. <em>Neuroscience Bulletin</em>, 2018, 34(6), 939–950.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2017 Publications -->
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-primary border-b pb-2">2017</h3>
+                        <div class="space-y-4 ml-4">
+                            <div class="border-l-4 border-primary/70 pl-4 py-1">
+                                <p class="text-gray-800">A. Tomita#, M. Zhang#, F. Jin#, W. Zhuang, H. Takeda, T. Maruyama, M. Osawa, K. Hashimoto, H. Kawasaki, K. Ito, N. Dohmae, R. Ishitani, I. Shimada, <strong>Z. Yan*</strong>, M. Hattori* &amp; O. Nureki*. ATP-dependent modulation of MgtE in Mg2+ homeostasis. <em>Nature Communications</em>, 2017, 8, 148.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2014 Publications -->
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-primary border-b pb-2">2014</h3>
+                        <div class="space-y-4 ml-4">
+                            <div class="border-l-4 border-primary/70 pl-4 py-1">
+                                <p class="text-gray-800">W. Zhang#, <strong>Z. Yan#</strong>, B. Li, L.Y. Jan, Y. N. Jan*. Identification of motor neurons and a mechanosensitive sensory neuron in the defecation circuitry of Drosophila larvae. <em>eLife</em>, 2014, 3, e03293.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2013 Publications -->
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-primary border-b pb-2">2013</h3>
+                        <div class="space-y-4 ml-4">
+                            <div class="border-l-4 border-primary/70 pl-4 py-1">
+                                <p class="text-gray-800"><strong>Z. Yan#</strong>, W. Zhang#, Y. He, D. Gorczyca, Y. Xiang, L.E. Cheng, S. Meltzer, L.Y. Jan, Y. N. Jan*. Drosophila NompC is a mechanotransduction channel subunit for gentle touch sensation. <em>Nature</em>, 2013, 493, 221–5.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2008 Publications -->
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-primary border-b pb-2">2008</h3>
+                        <div class="space-y-4 ml-4">
+                            <div class="border-l-4 border-primary/70 pl-4 py-1">
+                                <p class="text-gray-800"><strong>Z. Yan</strong>, J. Tan, C. Qin, Y. Lu, C. Ding, M. Luo*. Precise circuitry links bilaterally symmetric olfactory maps. <em>Neuron</em>, 2008, 58, 613–24.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+    </section>
+
+
+    <!-- Members Section -->
+    <section id="members" class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-primary">Lab Members</h2>
+            
+            <!-- Notion Table Embed -->
+            <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden p-4 md:p-6">
+                <iframe src="https://pricey-oatmeal-9b7.notion.site/ebd/22cce935d3bb80f4bf1ed8e0a87c2df7?v=22cce935d3bb81b5aaaf000c610dc292" width="100%" height="600" frameborder="0" allowfullscreen="" class="w-full"></iframe>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-primary">Lab Gallery</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
+                <div class="overflow-hidden rounded-xl shadow-md card-hover">
+                    <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/3e54d1c987c34bc9afab26b3d910e295~tplv-a9rns2rl98-image.image?rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1754377623&amp;x-signature=xHOS2WD8mxEwMM%2Fjr2FK4TOuScg%3D" alt="Lab equipment" class="w-full h-64 object-cover transition-transform hover:scale-110 duration-500">
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-md card-hover">
+                    <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/dde63f9c97d24295887e3ef081321df1~tplv-a9rns2rl98-image.image?rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1754377631&amp;x-signature=6gInzpgy0Mq2yk9QcNZKkytA%2B%2B4%3D" alt="Microscope image" class="w-full h-64 object-cover transition-transform hover:scale-110 duration-500">
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-md card-hover">
+                    <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/2b6ce4b4af6a4205a081eeed328c6a51~tplv-a9rns2rl98-image.image?rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1754377640&amp;x-signature=OsCUxhAQjDxONKBjG6KOlqj%2BMEY%3D" alt="Lab team meeting" class="w-full h-64 object-cover transition-transform hover:scale-110 duration-500">
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-md card-hover">
+                    <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/f766e9abaacb4ab986c9c77fd5adecc8~tplv-a9rns2rl98-image.image?rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1754377649&amp;x-signature=4XIT55MRXYC3Z9b3ro2jR8ep%2B3k%3D" alt="Data visualization" class="w-full h-64 object-cover transition-transform hover:scale-110 duration-500">
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-md card-hover">
+                    <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/d010fa482b344f5fbb40e94c883dc90f~tplv-a9rns2rl98-image.image?rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1754377657&amp;x-signature=UNbzTPJOpfqJI8JnkM3jY9T7h0Y%3D" alt="Electrophysiology setup" class="w-full h-64 object-cover transition-transform hover:scale-110 duration-500">
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-md card-hover">
+                    <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/bc3566658e1245b3afca31bd89276503~tplv-a9rns2rl98-image.image?rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1754377666&amp;x-signature=4DfRaZryTPrM87Xt3%2FeNjOB1wxs%3D" alt="Lab members at conference" class="w-full h-64 object-cover transition-transform hover:scale-110 duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Join Us Section -->
+    <section id="join-us" class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="p-8 md:p-10">
+                    <h2 class="text-3xl font-bold mb-8 text-primary">Join Our Team</h2>
+                    
+                    <!-- 课题组简介 -->
+                    <div class="mb-10">
+                        <h3 class="text-xl font-bold mb-4 text-primary border-b pb-2">课题组简介</h3>
+                        <p class="text-gray-700 mb-4">
+                            课题组组长，闫致强，2004年获复旦大学学士学位。2004-2009年分别于中国科学院神经科学研究所、北京生命科学研究所以及中科院生物物理研究所进行博士研究并获得博士学位。2009-2013加州大学旧金山分校及霍华德·休斯医学研究所师从美国科学院院士詹裕农，叶公杼 (Yuh-Nung Jan，Lily Jan) 进行博士后研究。2013年任复旦大学生命科学学院教授、博士生导师，获得上海高校特聘教授（东方学者，2014）、上海市青年科技启明星（2014），2020年加入深圳湾实验室分子生理所任资深研究员、副所长。2024年加入首都医科大学任基础医学院院长、博士生导师，首都医学科学创新中心任资深研究员、医学生理研究所所长。以通讯作者在 Neuron, Nature Structural &amp; Molecular Biology, PNAS, Nature Communications, eLife, Cell Reports，Genome Research 等国际高水平杂志发表多篇论文。获4项国家科技部重大研究计划、2项国家自然科学基金委面上项目支持。
+                        </p>
+                        <p class="text-gray-700">
+                            Dr. Zhiqiang Yan obtained his bachelor's degree from Fudan University in 2004. Then, he pursued his Ph.D. degree in Neurobiology, Institute of Neuroscience, Chinese Academy of Sciences, National Institute of Biological Sciences, Beijing &amp; Institute of Biophysics, Chinese Academy of Sciences from 2004-2009. He received postdoctoral training in both Lily Jan’s group and Yuh Nung Jan's group at the Howard Hughes Medical Institute &amp; University of California at San Francisco, San Francisco, USA. In 2013, he was appointed as a professor at Fudan University. Then, he joined Shenzhen Bay Laboratory as a senior principal investigator in 2020 and was appointed as deputy director in 2022. Then, he joined Capital Medical University as the Dean and doctoral supervisor of the school of Basic Medical Sciences, and joined the Chinese Institutes for Medical Research (CIMR) in Beijing as a senior principal investigator and director of the Institute for Medical Physiology in 2024. He has won honors such as Human Frontier Science Program (HFSP) Long-term Fellowship (2010), Shanghai Youth Science and Technology Venus (2014), The Shanghai Rising-Star Program (2014), etc. Dr. Yan has published papers as corresponding author (including co-authors) in journals including Neuron, Nature Structural &amp; Molecular Biology, PNAS, Nature Communications, eLife, Cell Reports, etc. He was supported by 4 National Key Research and Development Projects of China and 2 general programs of the National Natural Science Foundation of China.
+                        </p>
+                    </div>
+                    
+                    <!-- 课题组研究方向 -->
+                    <div class="mb-10">
+                        <h3 class="text-xl font-bold mb-4 text-primary border-b pb-2">课题组研究方向</h3>
+                        <p class="text-gray-700 mb-4">
+                            闫致强实验室长期从事感觉神经生物学的研究，综合运用分子生物学、蛋白相互作用和结构分析、电生理记录、神经回路的光遗传、化学遗传和成像等技术手段，结合药物筛选和基因编辑小鼠模型，进行听觉、触觉、渴觉等感觉受体的鉴定和工作机制研究，感觉系统神经回路，以及感觉系统疾病的机理和治疗，并探索这些感觉受体在其他重要生理功能中的作用。
+                        </p>
+                        <ul class="space-y-2 text-gray-700 mb-4 ml-6 list-disc">
+                            <li>听觉、触觉、痛觉、湿度感觉、渴觉等感觉受体的鉴定，其装配和工作机制研究，以及这些受体在其他重要生理过程中的作用，例如消化和免疫反应。</li>
+                            <li>解析感觉受体离子通道及其复合物的蛋白结构、分析离子通透性和门控机制等。</li>
+                            <li>鉴定在触觉、痛觉、平衡觉、听觉、渴觉、内脏感觉等的关键神经细胞群和神经回路。</li>
+                            <li>研究遗传性耳聋的致病机理、诊断以及基因治疗。</li>
+                        </ul>
+                        <p class="text-gray-700 font-semibold mb-2">Research direction：</p>
+                        <p class="text-gray-700 mb-3">
+                            We study sensory neurobiology, focusing on identifying the receptors and neural circuits for sensation and interoception, studying their working mechanism, and relating the diseases in the sensory system.
+                        </p>
+                        <ul class="space-y-2 text-gray-700 ml-6 list-disc">
+                            <li>Identify the receptors for hearing, touch, pain, and thirst sensation, study the gating and assembly of the related sensory transduction complex, and explore their functions in various physiological processes, such as digestion and immunity.</li>
+                            <li>Analysis of the protein structures of sensory receptor ion channels and their complexes, as well as the examination of ion permeability and gating mechanisms.</li>
+                            <li>Map the critical neuronal groups and circuits for sensation and interoception, such as touch, pain, vestibular, and thirst sensation.</li>
+                            <li>Study the pathogenic mechanism, diagnosis, and treatment of congenital hearing loss.</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 招聘专业背景 -->
+                    <div class="mb-10">
+                        <h3 class="text-xl font-bold mb-4 text-primary border-b pb-2">招聘专业背景</h3>
+                        <p class="text-gray-700 mb-2">
+                            因课题组科研工作需要，诚招神经生物学、分子生物学与生物化学、生理学、细胞生物学、结构生物学、药物化学等生物医学研究相关专业背景的人员，实验室十分欢迎多学科专业融合发展。
+                        </p>
+                        <p class="text-gray-700">
+                            We are looking for aspiring young people with professional backgrounds in neurobiology, molecular biology and biochemistry, cell biology, structural biology, pharmaceutical chemistry, etc. are sincerely invited. The laboratory welcomes the integration and development of multi-disciplinary specialties.
+                        </p>
+                    </div>
+                    
+                    <!-- 招聘岗位介绍 -->
+                    <div class="mb-10">
+                        <h3 class="text-xl font-bold mb-4 text-primary border-b pb-2">招聘岗位介绍</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="border-l-4 border-primary pl-4">
+                                <h4 class="font-bold text-lg mb-2">博士研究生 / 硕士研究生（Ph.D. and Master's Students）</h4>
+                                <p class="text-gray-700 mb-2">
+                                    课题组长期招收硕士、博士研究生，欢迎大家报考（首都医科大学或首都医学科学创新中心）。
+                                </p>
+                                <p class="text-gray-700">
+                                    The research group is recruiting long-term master's and doctoral students. Welcome to apply for admission (Capital Medical University or Chinese Institutes for Medical Research, Beijing).
+                                </p>
+                            </div>
+                            
+                            <div class="border-l-4 border-primary pl-4">
+                                <h4 class="font-bold text-lg mb-2">博士后（Postdoctoral Researcher）</h4>
+                                <p class="text-gray-700 mb-2">
+                                    在课题组组长指导下开展科研工作，同时欢迎优秀博士后自带课题加入课题组开展合作；支持其申请国家自然科学基金及省、市各级项目。
+                                </p>
+                                <p class="text-gray-700 mb-2">
+                                    博士后可根据自身博士研究方向从事对应的研究，如神经生物学研究方向：感觉受体和感觉神经回路的鉴定及功能研究；分子生物学与生物化学、细胞生物学研究方向：以 TMC 为核心的听觉转导复合物的组分鉴定和组装机制研究；结构生物学研究方向：感觉受体离子通道及其复合物包括 TMC，TMEM63 的结构、离子通透性和门控机制分析；生理学研究方向：新型离子通道 TMEM63 家族，TMC 家族 1-8 的生理功能分析；药物化学研究方向：感觉系统疾病包括耳鸣、遗传性耳聋等的治疗和药物开发。
+                                </p>
+                                <p class="text-gray-700">
+                                    Carry out scientific research under the guidance of the leader of the research group, and welcome outstanding postdoctoral researchers to bring their own topics to the research group for cooperation; Support its application for National Natural Science Foundation of China and projects at provincial and municipal levels.
+                                </p>
+                            </div>
+                            
+                            <div class="border-l-4 border-primary pl-4">
+                                <h4 class="font-bold text-lg mb-2">副研究员 / 助理研究员（Associate Research Fellow / Assistant Research Fellow）</h4>
+                                <p class="text-gray-700 mb-2">
+                                    在课题组组长指导下开展科研工作，同时欢迎自带课题加入课题组开展合作；支持其申请国家自然科学基金及省、市各级项目。
+                                </p>
+                                <p class="text-gray-700 mb-2">
+                                    助理研究员、副研究员可根据自身博士研究方向和工作研究背景从事对应的研究，如神经生物学研究方向：感觉受体和感觉神经回路的鉴定及功能研究；分子生物学与生物化学、细胞生物学研究方向：以 TMC 为核心的听觉转导复合物的组分鉴定和组装机制研究；结构生物学研究方向：感觉受体离子通道及其复合物包括 TMC，TMEM63 的结构、离子通透性和门控机制分析；生理学研究方向：新型离子通道 TMEM63 家族，TMC 家族 1-8 的生理功能分析；药物化学研究方向：感觉系统疾病包括耳鸣、遗传性耳聋等的治疗和药物开发。
+                                </p>
+                                <p class="text-gray-700">
+                                    Carry out scientific research under the guidance of the leader of the research group, and welcome researchers to bring their own topics to the research group for cooperation; Support its application for National Natural Science Foundation of China and projects at provincial and municipal levels.
+                                </p>
+                            </div>
+                            
+                            <div class="border-l-4 border-primary pl-4">
+                                <h4 class="font-bold text-lg mb-2">研究助理（Research Assistant）</h4>
+                                <p class="text-gray-700 mb-2">
+                                    完成课题组组长安排的实验任务，协助处理实验室行政事务，研究助理表现优秀者可推荐攻读硕士、博士项目。
+                                </p>
+                                <p class="text-gray-700">
+                                    Aim to complete the experimental tasks assigned by the group leader and assist in handling laboratory administrative affairs. If you perform well, you can be recommended to study for a master's or doctoral degree.
+                                </p>
+                            </div>
+                            
+                            <div class="border-l-4 border-primary pl-4">
+                                <h4 class="font-bold text-lg mb-2">技术员（Technician）</h4>
+                                <p class="text-gray-700 mb-2">
+                                    完成实验室安排的日常实验，负责维护实验室日常工作和行政事务。
+                                </p>
+                                <p class="text-gray-700">
+                                    Aim to complete the experimental tasks assigned by the group leader and responsible for maintaining the daily operations and administrative affairs of the laboratory.
+                                </p>
+                            </div>
+                            
+                            <div class="border-l-4 border-primary pl-4">
+                                <h4 class="font-bold text-lg mb-2">实验室管理员（Laboratory Manager）</h4>
+                                <p class="text-gray-700 mb-2">
+                                    本科学历及以上，生命科学、医学等相关专业；具有良好的沟通能力和团队协作能力；熟悉各种日常办公软件；有实验室工作经验或管理经验者优先考虑。负责协助实验室日常管理和维护工作，包括实验试剂及耗材管理、实验仪器设备维护、实验室卫生管理等；协助项目经费管理和费用报销工作；协助实验室安全管理工作，危化品管理以及特种设备的使用和实验材料灭菌等；负责和监控实验动物的饲养管理工作。
+                                </p>
+                                <p class="text-gray-700">
+                                    Have a bachelor's degree or above in life science or medicine-related majors. Have excellent communication and teamwork skills. Familiar with daily office software. Priority will be given to applicants with laboratory management experience. Assist in the daily management and maintenance of the laboratory, including the management of experimental reagents and consumables, the maintenance of experimental equipment, and the management of laboratory hygiene; assist in the management of project funds and expense reimbursement work; assist in the safety management of the laboratory, the management of hazardous chemicals, the use of special equipment, and the sterilization of experimental materials; be responsible for and monitor the breeding and management of laboratory animals.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 福利待遇 -->
+                    <div class="mb-10">
+                        <h3 class="text-xl font-bold mb-4 text-primary border-b pb-2">福利待遇</h3>
+                        <ul class="space-y-2 text-gray-700 mb-4 ml-6 list-disc">
+                            <li>根据应聘者的工作经验和能力，提供具有市场竞争力的薪酬（详情面谈）；</li>
+                            <li>提供良好的科研工作环境，尖端的技术支撑平台；</li>
+                            <li>协助申请国家级、地方级人才项目和人才奖励；</li>
+                            <li>支持个人职业发展，提供必要的工作相关专业培训；</li>
+                            <li>享受五险一金、带薪年假、体检和补充医疗保险等。</li>
+                        </ul>
+                        <p class="text-gray-700">
+                            Qualified candidates will receive an internationally competitive salary, state-of-the-art core facilities. Assistance will be provided in applying for national and regional talent awards and subsidies. Supporting personal career development and providing necessary job-related professional training. Other benefits include Social insurance, paid annual leave, physical examination, and supplementary medical insurance, etc.
+                        </p>
+                    </div>
+                    
+                    <!-- 应聘方法 -->
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold mb-4 text-primary border-b pb-2">应聘方法</h3>
+                        <p class="text-gray-700 mb-3">
+                            应聘者请提供以下 PDF 版材料：
+                        </p>
+                        <ul class="space-y-2 text-gray-700 mb-4 ml-6 list-disc">
+                            <li>个人简历及代表性科研成果；</li>
+                            <li>科研兴趣或计划；</li>
+                            <li>其它能够证明科研能力的材料。</li>
+                        </ul>
+                        <p class="text-gray-700 mb-2">
+                            （1）Curriculum vitae, including lists of publications and research funding;（2）Research interest or plan;（3）Other materials that can prove scientific research ability.
+                        </p>
+                        <p class="text-gray-700 font-semibold">
+                            请应聘者将上述材料，统一成 PDF 文件发送至：<a href="mailto:yan_lab@cimrbj.ac.cn" class="text-primary hover:underline">yan_lab@cimrbj.ac.cn</a>（邮件主题：应聘者姓名 + 应聘职位）。
+                        </p>
+                    </div>
+                    
+                    <a href="mailto:yan_lab@cimrbj.ac.cn" class="inline-block bg-primary text-white font-semibold px-6 py-3 rounded-lg hover:bg-primary/90 transition">
+                        Apply Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-primary">Contact Us</h2>
+            
+            <div class="max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <!-- Contact Person -->
+                    <div class="bg-light rounded-xl shadow-lg p-6 profile-card">
+                        <div class="flex flex-col items-center text-center">
+                            <div class="w-40 h-40 rounded-full overflow-hidden mb-6 border-4 border-primary/20">
+                                <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/ca3723b89ddd487184ed70c8777996f9~tplv-a9rns2rl98-image.image?rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1754380418&amp;x-signature=vmtGlzfVXUYw45l0W7A5uFv0BYE%3D" alt="Guanluan LI" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-2xl font-bold text-primary mb-1">Guanluan LI</h3>
+                            <p class="text-lg text-gray-600 mb-6">Lab Manager</p>
+                            
+                            <div class="w-full space-y-4">
+                                <div class="flex items-center">
+                                    <i class="fa fa-envelope contact-icon"></i>
+                                    <a href="mailto:info@mysite.com" class="text-gray-700 hover:text-primary transition">info@mysite.com</a>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fa fa-envelope contact-icon"></i>
+                                    <a href="mailto:ligl@szbl.ac.cn" class="text-gray-700 hover:text-primary transition">ligl@szbl.ac.cn</a>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fa fa-phone contact-icon"></i>
+                                    <span class="text-gray-700">0755-26849230</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fa fa-weixin contact-icon text-xl"></i>
+                                    <span class="text-gray-700">lgl_ts</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Info and Map -->
+                    <div class="bg-light rounded-xl shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-primary mb-6 border-b pb-2">Address</h3>
+                        <p class="text-gray-700 mb-6 leading-relaxed">
+                            Shenzhen Bay Laboratory<br>
+                            Gaoke International Innovation Center, A14<br>
+                            Guangqiao Road, Guangming District<br>
+                            Shenzhen City, Guangdong Province, 518107
+                        </p>
+                        
+                        <!-- Map placeholder -->
+                        <div class="w-full h-48 bg-gray-200 rounded-lg overflow-hidden mb-6">
+                            <img src="https://picsum.photos/id/1031/600/300" alt="Laboratory location map" class="w-full h-full object-cover">
+                        </div>
+                        
+                        <div class="mt-8">
+                            <p class="text-gray-700 font-medium mb-2">Thank you for your visit!</p>
+                            <div class="flex items-center text-primary font-semibold">
+                                <span>Reach out to us</span>
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">YAN LAB</h3>
+                    <p class="opacity-80 mb-4"><em>This is the Research Group of</em></p>
+                    <p class="text-xl font-semibold mb-4">Zhiqiang YAN.</p>
+                    <p class="opacity-80">Studying the Molecular and Circuitry Basis of Sensory Perception.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-6">RECRUITMENT</h4>
+                    <p class="opacity-80 mb-4">The group welcomes applications from prospective postdocs and students.</p>
+                    <a href="#join-us" class="inline-block text-secondary hover:text-white transition flex items-center">
+                        <span>View open positions</span>
+                        <i class="fa fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-6">LOCATION</h4>
+                    <p class="opacity-80 mb-2">Capital Medical University &amp; Chinese Institutes for Medical Research, Beijing</p>
+                    <p class="opacity-80">Beijing No. 10, Xi Toutiao, outside You'anmen, Fengtai District, Beijing, China</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <div class="flex space-x-6 mb-4 md:mb-0">
+                    <a href="#zhiqiang-yan" class="hover:text-secondary transition">Zhiqiang Yan</a>
+                    <a href="#research" class="hover:text-secondary transition">Research</a>
+                    <a href="#publications" class="hover:text-secondary transition">Publications</a>
+                    <a href="#contact" class="hover:text-secondary transition">Contact</a>
+                </div>
+                <p class="opacity-80 text-sm">© 2023 Yan Lab. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Navbar scroll effect
+        const nav = document.getElementById('main-nav');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.remove('nav-scrolled');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+    </body></html>
+    
